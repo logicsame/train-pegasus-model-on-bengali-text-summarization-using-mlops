@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 from benglasummarization.logging import logger
 from tqdm.notebook import tqdm
-from src.benglasummarization.entity.config_entity import BanTokenizationConfig
+from benglasummarization.entity.config_entity import BanTokenizationConfig
 class BanTokenization:
     def __init__(self, config: BanTokenizationConfig):
         self.config = config

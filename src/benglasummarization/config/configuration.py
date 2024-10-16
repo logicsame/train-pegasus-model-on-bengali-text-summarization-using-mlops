@@ -30,7 +30,7 @@ class ConfigurationManager:
     
     def get_ben_tokenization_config(self) -> BanTokenizationConfig:
         config = self.config.ban_tokenization
-        params = self.params.pre_tokenize
+        params = self.params
         create_directories([config.root_dir])
 
         ben_tokenization_config = BanTokenizationConfig(
@@ -45,7 +45,7 @@ class ConfigurationManager:
     
     def get_train_token_config(self) -> BanTokenTrainConfig:
         config = self.config.train_tokenize
-        params = self.params.train_tokenize
+        params = self.params
         create_directories([config.root_dir])
         
         train_token_config = BanTokenTrainConfig(
@@ -60,7 +60,7 @@ class ConfigurationManager:
     
     def get_model_trainer_config(self) -> ModelTrainingConfig:
         config = self.config.model_training
-        param = self.params.training_model
+        param = self.params
         create_directories([config.root_dir])
         model_trainer_config = ModelTrainingConfig(
             root_dir= config.root_dir,

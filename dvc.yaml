@@ -4,18 +4,16 @@ stages:
     deps:
       - src/benglasummarization/pipeline/stage01_data_ingestion.py
       - config/config.yaml
-    outs:
-      - artifacts/data_ingestion
+   
 
-  prepare_base_model:
+  prepare_Ban_tok:
     cmd: python src/benglasummarization/pipeline/stage_02_prepare_ben_tok.py
     deps:
-      - ssrc/benglasummarization/pipeline/stage_02_prepare_ben_tok.py
+      - src/benglasummarization/pipeline/stage_02_prepare_ben_tok.py
       - config/config.yaml
     params:
       - output_file   
-    outs:
-      - artifacts/ban_tokenization
+    
 
   tokenize_training:
     cmd: python src/benglasummarization/pipeline/stage_03_train_ban_token.py
@@ -23,7 +21,6 @@ stages:
       - src/benglasummarization/pipeline/stage_03_train_ban_token.py
       - config/config.yaml
       - artifacts/ban_tokenization/combined_text.txt
-      - artifacts/train_tokenization
     params:
       - model_prefix   # List format for params
       - model_type
@@ -47,5 +44,4 @@ stages:
       - max_grad_norm
       - early_stopping_patience
       - patience_counter
-    outs:
-      - artifacts/model_training
+   
