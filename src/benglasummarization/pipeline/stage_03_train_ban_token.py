@@ -1,5 +1,5 @@
-from src.benglasummarization.config.configuration import ConfigurationManager
-from src.benglasummarization.components.train_bn_token import TrainTokenize
+from benglasummarization.config.configuration import ConfigurationManager
+from benglasummarization.components.train_bn_token import TrainTokenize
 
 class TrainTokenizePipeLine:
     def __init__(self):

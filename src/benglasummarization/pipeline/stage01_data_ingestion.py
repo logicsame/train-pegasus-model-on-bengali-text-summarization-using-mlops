@@ -1,5 +1,5 @@
-from src.benglasummarization.components.data_ingestion import DataIngestion
-from src.benglasummarization.config.configuration import ConfigurationManager
+from benglasummarization.components.data_ingestion import DataIngestion
+from benglasummarization.config.configuration import ConfigurationManager
 
 class DataIngestionPipeline:
     def __init__(self):

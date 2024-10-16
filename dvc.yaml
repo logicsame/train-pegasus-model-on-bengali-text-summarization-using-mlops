@@ -1,0 +1,51 @@
+stages:
+  data_ingestion:
+    cmd: python src/benglasummarization/pipeline/stage01_data_ingestion.py
+    deps:
+      - src/benglasummarization/pipeline/stage01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion
+
+  prepare_base_model:
+    cmd: python src/benglasummarization/pipeline/stage_02_prepare_ben_tok.py
+    deps:
+      - ssrc/benglasummarization/pipeline/stage_02_prepare_ben_tok.py
+      - config/config.yaml
+    params:
+      - output_file   
+    outs:
+      - artifacts/ban_tokenization
+
+  tokenize_training:
+    cmd: python src/benglasummarization/pipeline/stage_03_train_ban_token.py
+    deps: 
+      - src/benglasummarization/pipeline/stage_03_train_ban_token.py
+      - config/config.yaml
+      - artifacts/ban_tokenization/combined_text.txt
+      - artifacts/train_tokenization
+    params:
+      - model_prefix   # List format for params
+      - model_type
+      - vocab_size
+
+  training:
+    cmd: python src/benglasummarization/pipeline/stage_04_model_Training.py
+    deps:
+      - src/benglasummarization/pipeline/stage_04_model_Training.py
+      - config/config.yaml
+      - artifacts/data_ingestion/BanSum.csv
+      - artifacts/train_tokenization/cbengali_tokenizer.model
+    params:
+      - max_input_length  # List format for params
+      - max_output_length
+      - model_name
+      - batch_size
+      - num_epochs
+      - learning_rate
+      - accumulator_steps
+      - max_grad_norm
+      - early_stopping_patience
+      - patience_counter
+    outs:
+      - artifacts/model_training

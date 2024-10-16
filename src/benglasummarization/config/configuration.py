@@ -1,8 +1,8 @@
-from src.benglasummarization.constants import *
-from src.benglasummarization.utils.common import read_yaml, create_directories
+from benglasummarization.constants import *
+from benglasummarization.utils.common import read_yaml, create_directories
 from benglasummarization.entity.config_entity import DataIngestionConfig
-from src.benglasummarization.entity.config_entity import BanTokenizationConfig
-from src.benglasummarization.entity.config_entity import BanTokenTrainConfig, ModelTrainingConfig
+from benglasummarization.entity.config_entity import BanTokenizationConfig
+from benglasummarization.entity.config_entity import BanTokenTrainConfig, ModelTrainingConfig
 class ConfigurationManager:
     def __init__(
         self, 

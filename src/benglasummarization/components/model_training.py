@@ -7,8 +7,8 @@ from transformers import PegasusForConditionalGeneration, PegasusTokenizer
 from tqdm import tqdm
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from src.benglasummarization.logging import logger
-from src.benglasummarization.entity.config_entity import ModelTrainingConfig
+from benglasummarization.logging import logger
+from benglasummarization.entity.config_entity import ModelTrainingConfig
 
 
 class BengaliSummaryDataset(Dataset):
@@ -61,7 +61,7 @@ class ModelTraining:
 
     def load_data(self):
         df = pd.read_csv(self.config.data_dir)
-        df = df.head(1000)
+        df = df.head(10)
         texts = df['main'].tolist()
         summaries = df['sum3'].tolist()
         return train_test_split(texts, summaries, test_size=0.1, random_state=42)

@@ -1,5 +1,5 @@
-from src.benglasummarization.components.model_training import ModelTraining
-from src.benglasummarization.config.configuration import ConfigurationManager
+from benglasummarization.components.model_training import ModelTraining
+from benglasummarization.config.configuration import ConfigurationManager
 
 class ModelTrainingPipeline:
     def __init__(self):

@@ -1,5 +1,5 @@
-from src.benglasummarization.components.prepare_ben_token import BanTokenization
-from src.benglasummarization.config.configuration import ConfigurationManager
+from benglasummarization.components.prepare_ben_token import BanTokenization
+from benglasummarization.config.configuration import ConfigurationManager
 
 
 class BenTokenizationPreparePipeLine:

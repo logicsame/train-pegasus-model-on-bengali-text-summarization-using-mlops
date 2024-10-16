@@ -1,9 +1,9 @@
 import os
 import zipfile
-from src.benglasummarization.logging import logger
+from  benglasummarization.logging import logger
 from tqdm.notebook import tqdm
 from dataclasses import replace
-from src.benglasummarization.entity.config_entity import DataIngestionConfig
+from  benglasummarization.entity.config_entity import DataIngestionConfig
 
 class DataIngestion:
     def __init__(self, config : DataIngestionConfig):

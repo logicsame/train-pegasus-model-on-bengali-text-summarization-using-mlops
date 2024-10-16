@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-from src.benglasummarization.logging import logger
+from benglasummarization.logging import logger
 from tqdm.notebook import tqdm
 from src.benglasummarization.entity.config_entity import BanTokenizationConfig
 class BanTokenization:

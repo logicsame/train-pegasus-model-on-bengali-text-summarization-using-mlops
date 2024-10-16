@@ -2,7 +2,7 @@ import sentencepiece as spm
 from src.benglasummarization.logging import logger
 from tqdm.notebook import tqdm
 import os
-from src.benglasummarization.entity.config_entity import BanTokenTrainConfig
+from benglasummarization.entity.config_entity import BanTokenTrainConfig
 class TrainTokenize:
     def __init__(self, config: BanTokenTrainConfig):
         self.config = config
