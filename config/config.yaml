@@ -6,3 +6,9 @@ data_ingestion:
   local_data_file : artifacts/data_ingestion/BanSum.zip
   unzip_dir : artifacts/data_ingestion
 
+ban_tokenization:
+  root_dir: artifacts/ban_tokenization
+  source_dir: artifacts/data_ingestion/BanSum.csv
+  save_dir: artifacts/ban_tokenization  
+
+

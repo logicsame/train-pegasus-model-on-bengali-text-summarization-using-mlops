@@ -1,1 +1,2 @@
-key : val
+
+output_file: "combined_text.txt"

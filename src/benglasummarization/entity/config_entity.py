@@ -8,3 +8,11 @@ class DataIngestionConfig:
     local_data_file : Path
     unzip_dir : Path
     
+    
+@dataclass(frozen=True)
+class BanTokenizationConfig:
+    root_dir : Path
+    source_dir : Path
+    save_dir : Path
+    output_file : str
+    
