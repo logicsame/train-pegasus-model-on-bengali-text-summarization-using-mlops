@@ -16,3 +16,12 @@ class BanTokenizationConfig:
     save_dir : Path
     output_file : str
     
+@dataclass(frozen=True)
+class BanTokenTrainConfig:
+    root_dir : Path
+    input_file_dir : Path
+    save_file : Path
+    model_prefix : str
+    model_type : str
+    vocab_size : int
+    

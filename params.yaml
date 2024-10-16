@@ -1,2 +1,7 @@
+pre_tokenize:
+  output_file: "combined_text.txt"
 
-output_file: "combined_text.txt"
+train_tokenize:
+  model_prefix : 'cbengali_tokenizer'
+  model_type : 'unigram'
+  vocab_size : 91902
