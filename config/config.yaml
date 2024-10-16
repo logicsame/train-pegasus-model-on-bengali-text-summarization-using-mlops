@@ -16,5 +16,11 @@ train_tokenize:
   input_file_dir : artifacts/ban_tokenization/combined_text.txt
   save_file : artifacts/train_tokenization
 
+model_training:
+  root_dir : artifacts/model_training
+  data_dir : artifacts/data_ingestion/BanSum.csv
+  ben_tokenizer_dir : artifacts/train_tokenization/cbengali_tokenizer.model
+  save_trained_model_dir : artifacts/model_training
+
   
 

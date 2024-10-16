@@ -5,3 +5,15 @@ train_tokenize:
   model_prefix : 'cbengali_tokenizer'
   model_type : 'unigram'
   vocab_size : 91902
+
+training_model:
+  max_input_length : 256
+  max_output_length : 125
+  model_name : 'google/pegasus-large'
+  batch_size : 1
+  num_epochs : 1
+  learning_rate : 1e-4
+  accumulator_steps : 4
+  max_grad_norm : 1.0
+  early_stopping_patience : 3
+  patience_counter : 0

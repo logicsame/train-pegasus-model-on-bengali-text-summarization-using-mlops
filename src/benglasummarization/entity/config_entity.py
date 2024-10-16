@@ -25,3 +25,20 @@ class BanTokenTrainConfig:
     model_type : str
     vocab_size : int
     
+@dataclass(frozen=True)
+class ModelTrainingConfig:
+    root_dir : Path
+    data_dir : Path 
+    ben_tokenizer_dir : Path
+    save_trained_model_dir : Path
+    max_input_length : int
+    max_output_length : int
+    batch_size : int
+    num_epochs : int
+    accumulator_steps : int
+    max_grad_norm : float
+    early_stopping_patience : int
+    patience_counter : int
+    model_name : str
+    learning_rate : float
+    

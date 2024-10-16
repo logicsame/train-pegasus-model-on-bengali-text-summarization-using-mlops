@@ -2,7 +2,7 @@ from src.benglasummarization.constants import *
 from src.benglasummarization.utils.common import read_yaml, create_directories
 from benglasummarization.entity.config_entity import DataIngestionConfig
 from src.benglasummarization.entity.config_entity import BanTokenizationConfig
-from src.benglasummarization.entity.config_entity import BanTokenTrainConfig
+from src.benglasummarization.entity.config_entity import BanTokenTrainConfig, ModelTrainingConfig
 class ConfigurationManager:
     def __init__(
         self, 
@@ -57,3 +57,26 @@ class ConfigurationManager:
             vocab_size= params.vocab_size
         )
         return train_token_config
+    
+    def get_model_trainer_config(self) -> ModelTrainingConfig:
+        config = self.config.model_training
+        param = self.params.training_model
+        create_directories([config.root_dir])
+        model_trainer_config = ModelTrainingConfig(
+            root_dir= config.root_dir,
+            data_dir= config.data_dir,
+            ben_tokenizer_dir= config.ben_tokenizer_dir,
+            save_trained_model_dir= config.save_trained_model_dir,
+            max_input_length = param.max_input_length,
+            max_output_length = param.max_output_length,
+            batch_size = param.batch_size,
+            num_epochs = param.num_epochs,
+            accumulator_steps = param.accumulator_steps,
+            max_grad_norm = param.max_grad_norm,
+            early_stopping_patience = param.early_stopping_patience,
+            patience_counter = param.patience_counter,
+            model_name = param.model_name,
+            learning_rate = param.learning_rate
+            
+        )
+        return model_trainer_config
