@@ -7,6 +7,7 @@ tqdm
 PyYAML
 matplotlib
 notebook
+sentencepiece
 boto3
 mypy-boto3-s3
 python-box==6.0.2
